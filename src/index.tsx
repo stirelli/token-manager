@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
+import { history, initStore } from './modules/store';
+
+import 'decentraland-ui/lib/styles.css';
 import './index.css';
-import { initStore } from './modules/store';
+import { ConnectedRouter } from 'connected-react-router';
+import Routes from './components/Routes';
 
 function main() {
   const component = (
-    <React.StrictMode>
-      <Provider store={initStore()}></Provider>
-    </React.StrictMode>
+    <Provider store={initStore()}>
+      <ConnectedRouter history={history}>
+        <Routes />
+      </ConnectedRouter>
+    </Provider>
   );
 
   ReactDOM.render(component, document.getElementById('root'));
