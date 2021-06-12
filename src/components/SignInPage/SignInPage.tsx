@@ -1,8 +1,8 @@
-import { Button, Center, Page } from 'decentraland-ui';
+import { Center, Page, Button } from 'decentraland-ui';
 import React from 'react';
-import { SignInProps } from './SignIn.types';
+import { SignInProps } from './SignInPage.types';
 
-const SignIn = (props: SignInProps) => {
+const SignInPage = (props: SignInProps) => {
   return (
     <Page>
       <Center screen>
@@ -14,4 +14,4 @@ const SignIn = (props: SignInProps) => {
   );
 };
 
-export default React.memo(SignIn);
+export default React.memo(SignInPage);

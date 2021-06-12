@@ -28,5 +28,9 @@ export function initStore(): Store {
 
   sagasMiddleware.run(rootSaga);
 
+  if (isDev) {
+    _window.store = store;
+  }
+
   return store;
 }

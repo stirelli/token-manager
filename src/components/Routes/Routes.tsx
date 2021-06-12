@@ -1,8 +1,9 @@
 import { Route, Switch } from 'react-router';
 import { Props } from './Routes.types';
 import { locations } from '../../modules/routing/location';
-import SignIn from '../SignIn';
 import { Redirect } from 'react-router-dom';
+import SignIn from '../SignInPage';
+import HomePage from '../HomePage';
 
 const Routes = ({ isConnected }: Props) => {
   if (!isConnected) {
@@ -18,10 +19,12 @@ const Routes = ({ isConnected }: Props) => {
 
   return (
     <>
-      {/* {      <Switch>
-        <Route exact path={locations.root()} component={SignIn} />
-        <Redirect to={locations.root()} />
-      </Switch>} */}
+      {
+        <Switch>
+          <Route exact path={locations.root()} component={HomePage} />
+          <Redirect to={locations.root()} />
+        </Switch>
+      }
     </>
   );
 };

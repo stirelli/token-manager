@@ -12,3 +12,15 @@ export const connectWalletFailure = (error: string) => action(CONNECT_WALLET_FAI
 export type ConnectWalletRequestAction = ReturnType<typeof connectWalletRequest>;
 export type ConnectWalletSuccessAction = ReturnType<typeof connectWalletSuccess>;
 export type ConnectWalletFailureAction = ReturnType<typeof connectWalletFailure>;
+
+export const SEND_TOKEN_REQUEST = '[Request] SEND TOKEN';
+export const SEND_TOKEN_SUCCESS = '[Success] SEND TOKEN';
+export const SEND_TOKEN_FAILURE = '[Failure] SEND TOKEN';
+
+export const sendTokenRequest = (address: string, amount: number) => action(SEND_TOKEN_REQUEST, { address, amount });
+export const sendTokenSuccess = () => action(SEND_TOKEN_SUCCESS);
+export const sendTokenFailure = (error: string) => action(SEND_TOKEN_FAILURE, { error });
+
+export type SendTokenRequestAction = ReturnType<typeof sendTokenRequest>;
+export type SendTokenSuccessAction = ReturnType<typeof sendTokenSuccess>;
+export type SendTokenFailureAction = ReturnType<typeof sendTokenFailure>;
